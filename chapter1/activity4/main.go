@@ -184,3 +184,31 @@ package main
 // 	var starttime time.Time
 // 	fmt.Printf("start	: %#v \n", starttime)
 // }
+
+// getting a pointer
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	// declare pointer using a var statement
+	var count1 *int
+
+	// create variable using new
+	count2 := new(int)
+
+	// temp. variable to hold a number bcos cannot take the address of a literal number
+	counttemp := 5
+
+	// using & to create a pointer from the existing variable (referening?)
+	count3 := &counttemp
+
+	// create pointer from a type without a temp. variable
+	t := &time.Time{}
+
+	fmt.Printf("count1:	%#v\n", count1)
+	fmt.Printf("count2:	%#v\n", count2)
+	fmt.Printf("count3:	%#v\n", count3)
+	fmt.Printf("time:	%#v\n", t)
+}
