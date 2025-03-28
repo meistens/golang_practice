@@ -186,29 +186,59 @@ package main
 // }
 
 // getting a pointer
+// import (
+// 	"fmt"
+// 	"time"
+// )
+
+// func main() {
+// 	// declare pointer using a var statement
+// 	var count1 *int
+
+// 	// create variable using new
+// 	count2 := new(int)
+
+// 	// temp. variable to hold a number bcos cannot take the address of a literal number
+// 	counttemp := 5
+
+// 	// using & to create a pointer from the existing variable (referening?)
+// 	count3 := &counttemp
+
+// 	// create pointer from a type without a temp. variable
+// 	t := &time.Time{}
+
+// 	fmt.Printf("count1:	%#v\n", count1)
+// 	fmt.Printf("count2:	%#v\n", count2)
+// 	fmt.Printf("count3:	%#v\n", count3)
+// 	fmt.Printf("time:	%#v\n", t)
+// }
+
+// getting values from a pointer
 import (
 	"fmt"
 	"time"
 )
 
 func main() {
-	// declare pointer using a var statement
 	var count1 *int
-
-	// create variable using new
 	count2 := new(int)
-
-	// temp. variable to hold a number bcos cannot take the address of a literal number
 	counttemp := 5
-
-	// using & to create a pointer from the existing variable (referening?)
 	count3 := &counttemp
-
-	// create pointer from a type without a temp. variable
 	t := &time.Time{}
 
-	fmt.Printf("count1:	%#v\n", count1)
-	fmt.Printf("count2:	%#v\n", count2)
-	fmt.Printf("count3:	%#v\n", count3)
-	fmt.Printf("time:	%#v\n", t)
+	// for count1-3, add a nil to check and add * in front of the variable name
+	if count1 != nil {
+		fmt.Printf("count1: %#v\n", *count1)
+	}
+	if count2 != nil {
+		fmt.Printf("count2:	%#v\n", *count2)
+	}
+	if count3 != nil {
+		fmt.Printf("count3:	%#v\n", *count3)
+	}
+
+	// check, but deference the variable using *
+	if t != nil {
+		fmt.Printf("time:	%#v\n", *t)
+	}
 }
