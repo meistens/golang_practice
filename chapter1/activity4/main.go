@@ -214,31 +214,34 @@ package main
 // }
 
 // getting values from a pointer
-import (
-	"fmt"
-	"time"
-)
+// import (
+// 	"fmt"
+// 	"time"
+// )
 
-func main() {
-	var count1 *int
-	count2 := new(int)
-	counttemp := 5
-	count3 := &counttemp
-	t := &time.Time{}
+// func main() {
+// 	var count1 *int
+// 	count2 := new(int)
+// 	counttemp := 5
+// 	count3 := &counttemp
+// 	t := &time.Time{}
 
-	// for count1-3, add a nil to check and add * in front of the variable name
-	if count1 != nil {
-		fmt.Printf("count1: %#v\n", *count1)
-	}
-	if count2 != nil {
-		fmt.Printf("count2:	%#v\n", *count2)
-	}
-	if count3 != nil {
-		fmt.Printf("count3:	%#v\n", *count3)
-	}
+// 	// for count1-3, add a nil to check and add * in front of the variable name
+// 	if count1 != nil {
+// 		fmt.Printf("count1: %#v\n", *count1)
+// 	}
+// 	if count2 != nil {
+// 		fmt.Printf("count2:	%#v\n", *count2)
+// 	}
+// 	if count3 != nil {
+// 		fmt.Printf("count3:	%#v\n", *count3)
+// 	}
 
-	// check, but deference the variable using *
-	if t != nil {
-		fmt.Printf("time:	%#v\n", *t)
-	}
-}
+// 	// check, but deference the variable using *
+// 	if t != nil {
+// 		fmt.Printf("time:	%#v\n", *t)
+// 	fmt.Printf("time	: %#v\n", t.String())
+// 	}
+// }
+
+// function design with pointers
