@@ -372,22 +372,37 @@ package main
 // }
 
 // shadowed scope demonstration
+// import "fmt"
+
+// var level = "pkg"
+
+// func main() {
+// 	fmt.Println("main start	:", level)
+
+// 	// ceate a shadow variable/declare and initialize a new variable
+// 	level := 42
+// 	if true {
+// 		fmt.Println("block start	:", level)
+// 		funcA()
+// 	}
+// 	fmt.Println("main end	:", level)
+// }
+
+// func funcA() {
+// 	fmt.Println("funcA start	:", level)
+// }
+
+// message bug
 import "fmt"
 
-var level = "pkg"
-
 func main() {
-	fmt.Println("main start	:", level)
+	count := 5
+	var message string
 
-	// ceate a shadow variable/declare and initialize a new variable
-	level := 42
-	if true {
-		fmt.Println("block start	:", level)
-		funcA()
+	if count > 5 {
+		message = "greater than 5"
+	} else {
+		message = "not greater than 5"
 	}
-	fmt.Println("main end	:", level)
-}
-
-func funcA() {
-	fmt.Println("funcA start	:", level)
+	fmt.Println(message)
 }
