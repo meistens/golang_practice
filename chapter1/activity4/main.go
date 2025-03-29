@@ -267,17 +267,77 @@ package main
 // }
 
 // pointer value swap
+// import "fmt"
+
+// func main() {
+// 	a, b := 5, 10
+// 	// call swap here
+// 	swap(&a, &b)
+// 	fmt.Println(a == 10, b == 5)
+// }
+// func swap(a *int, b *int) {
+// 	// swap the values here
+// 	temp := *b // temp holds the value 10
+// 	*b = *a    // b holds the value 5 belonging to a
+// 	*a = temp  // a holds the value 10 once held by b
+// }
+
+// constants
 import "fmt"
 
-func main() {
-	a, b := 5, 10
-	// call swap here
-	swap(&a, &b)
-	fmt.Println(a == 10, b == 5)
+const GlobalLimit = 100
+const MaxCacheSize int = 10 * GlobalLimit
+
+// cache prefix
+const (
+	CacheKeyBook = "book_"
+	CacheKeyCD   = "cd_"
+)
+
+// map value with a string value for a key and a string for cache
+var cache map[string]string
+
+// func to get items from the cache
+func cacheGet(key string) string {
+	return cache[key]
 }
-func swap(a *int, b *int) {
-	// swap the values here
-	temp := *b // temp holds the value 10
-	*b = *a    // b holds the value 5 belonging to a
-	*a = temp  // a holds the value 10 once held by b
+
+// func sets items in the cache, check maxcachesize to stop it
+// from going over size
+func cacheSet(key, val string) {
+	if len(cache)+1 >= MaxCacheSize {
+		return
+	}
+	cache[key] = val
+}
+
+// get book from the cache, use same prefix to create a unique key
+func GetBook(isbn string) string {
+	return cacheGet(CacheKeyBook + isbn)
+}
+
+// add book, create unique key
+func SetBook(isbn string, name string) {
+	cacheSet(CacheKeyBook+isbn, name)
+}
+
+// get CD data from cache, create unique key
+func getCD(sku string) string {
+	return cacheGet(CacheKeyCD + sku)
+}
+
+// func to add CD to the shared cache, build a unique key for shared cache
+func SetCD(sku string, title string) {
+	cacheSet(CacheKeyCD+sku, title)
+}
+
+func main() {
+	cache = make(map[string]string)
+
+	SetBook("1234-56789", "Get ready to go")
+
+	SetCD("1234-56789", "get ready to go audiobook")
+
+	fmt.Println("book	:", GetBook("1234-56789"))
+	fmt.Println("CD	:", getCD("1234-56789"))
 }
