@@ -3,10 +3,6 @@
 // if statement
 package main
 
-import (
-	"fmt"
-)
-
 // func main() {
 // 	input := 8
 
@@ -20,12 +16,12 @@ import (
 // }
 
 // if else
-func main() {
-	input := 8
+// func main() {
+// 	input := 8
 
-	if input%2 == 0 {
-		fmt.Println(input, "is even")
-	} else {
-		fmt.Println(input, "is odd")
-	}
-}
+// 	if input%2 == 0 {
+// 		fmt.Println(input, "is even")
+// 	} else {
+// 		fmt.Println(input, "is odd")
+// 	}
+// }
