@@ -393,16 +393,28 @@ package main
 // }
 
 // message bug
+// import "fmt"
+
+// func main() {
+// 	count := 5
+// 	var message string
+
+// 	if count > 5 {
+// 		message = "greater than 5"
+// 	} else {
+// 		message = "not greater than 5"
+// 	}
+// 	fmt.Println(message)
+// }
+
+// bad count bug
 import "fmt"
 
 func main() {
-	count := 5
-	var message string
-
-	if count > 5 {
-		message = "greater than 5"
-	} else {
-		message = "not greater than 5"
+	count := 0
+	if count < 5 {
+		count = 10 // assign to existing variable by removing ':'
+		count++
 	}
-	fmt.Println(message)
+	fmt.Println(count == 11)
 }
