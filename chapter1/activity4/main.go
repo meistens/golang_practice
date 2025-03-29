@@ -245,3 +245,23 @@ package main
 // }
 
 // function design with pointers
+import "fmt"
+
+func add5Val(count int) {
+	count += 5
+	fmt.Println("add5val	:", count)
+}
+
+func add5Point(count *int) {
+	*count += 5
+	fmt.Println("add5Point	:", *count)
+}
+
+func main() {
+	var count int
+	add5Val(count)
+	fmt.Println("add5val post:", count)
+
+	add5Point(&count)
+	fmt.Println("add5Point post:", count)
+}
