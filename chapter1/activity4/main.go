@@ -245,23 +245,39 @@ package main
 // }
 
 // function design with pointers
+// import "fmt"
+
+// func add5Val(count int) {
+// 	count += 5
+// 	fmt.Println("add5val	:", count)
+// }
+
+// func add5Point(count *int) {
+// 	*count += 5
+// 	fmt.Println("add5Point	:", *count)
+// }
+
+// func main() {
+// 	var count int
+// 	add5Val(count)
+// 	fmt.Println("add5val post:", count)
+
+// 	add5Point(&count)
+// 	fmt.Println("add5Point post:", count)
+// }
+
+// pointer value swap
 import "fmt"
 
-func add5Val(count int) {
-	count += 5
-	fmt.Println("add5val	:", count)
-}
-
-func add5Point(count *int) {
-	*count += 5
-	fmt.Println("add5Point	:", *count)
-}
-
 func main() {
-	var count int
-	add5Val(count)
-	fmt.Println("add5val post:", count)
-
-	add5Point(&count)
-	fmt.Println("add5Point post:", count)
+	a, b := 5, 10
+	// call swap here
+	swap(&a, &b)
+	fmt.Println(a == 10, b == 5)
+}
+func swap(a *int, b *int) {
+	// swap the values here
+	temp := *b // temp holds the value 10
+	*b = *a    // b holds the value 5 belonging to a
+	*a = temp  // a holds the value 10 once held by b
 }
