@@ -344,14 +344,29 @@ package main
 
 // enums with go'z iota feature
 
-const (
-	sunday = iota
-	monday
-	tuesday
-	wednesday
-	thursday
-	friday
-	saturday
-)
+// const (
+// 	sunday = iota
+// 	monday
+// 	tuesday
+// 	wednesday
+// 	thursday
+// 	friday
+// 	saturday
+// )
 
 // scope
+import "fmt"
+
+var level = "pkg"
+
+func main() {
+	fmt.Println("main start	:", level)
+	if true {
+		fmt.Println("block start	:", level)
+		funcA()
+	}
+}
+
+func funcA() {
+	fmt.Println("funcA start	:", level)
+}
