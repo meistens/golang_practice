@@ -83,19 +83,34 @@ package main
 // }
 
 // switch and multiple case values
+// import (
+// 	"fmt"
+// 	"time"
+// )
+
+// func main() {
+// 	dayBorn := time.Tuesday
+
+// 	switch dayBorn {
+// 	case time.Wednesday, time.Thursday, time.Friday:
+// 		fmt.Println("born on a weekday")
+// 		// skipped in case of error, dunno how to handle that...yet
+// 	default:
+// 		fmt.Println("born on some weekday")
+// 	}
+// }
+
+// expressionless switch statements
 import (
 	"fmt"
 	"time"
 )
 
 func main() {
-	dayBorn := time.Tuesday
-
-	switch dayBorn {
-	case time.Wednesday, time.Thursday, time.Friday:
-		fmt.Println("born on a weekday")
-		// skipped in case of error, dunno how to handle that...yet
+	switch dayBorn := time.Sunday; {
+	case dayBorn == time.Sunday || dayBorn == time.Saturday:
+		fmt.Println("born on a weekend")
 	default:
-		fmt.Println("born on some weekday")
+		fmt.Println("born on some other day")
 	}
 }
