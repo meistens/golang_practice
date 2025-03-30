@@ -67,21 +67,35 @@ package main
 // }
 
 // expression switch statements
+
+// func main() {
+// 	dayBorn := time.Monday
+
+// 	switch dayBorn {
+// 	case time.Monday:
+// 		fmt.Println("Monday's child is fair of face")
+// 	case time.Tuesday:
+// 		fmt.Println("Tuesday's child is full of grace")
+// 	// this goes on and on...
+// 	default:
+// 		fmt.Println("Error, day born is not valid")
+// 	}
+// }
+
+// switch and multiple case values
 import (
 	"fmt"
 	"time"
 )
 
 func main() {
-	dayBorn := time.Monday
+	dayBorn := time.Tuesday
 
 	switch dayBorn {
-	case time.Monday:
-		fmt.Println("Monday's child is fair of face")
-	case time.Tuesday:
-		fmt.Println("Tuesday's child is full of grace")
-	// this goes on and on...
+	case time.Wednesday, time.Thursday, time.Friday:
+		fmt.Println("born on a weekday")
+		// skipped in case of error, dunno how to handle that...yet
 	default:
-		fmt.Println("Error, day born is not valid")
+		fmt.Println("born on some weekday")
 	}
 }
