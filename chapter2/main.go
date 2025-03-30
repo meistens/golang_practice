@@ -3,11 +3,6 @@
 // if statement
 package main
 
-import (
-	"errors"
-	"fmt"
-)
-
 // func main() {
 // 	input := 8
 
@@ -47,26 +42,46 @@ import (
 // }
 
 // initial if statement
-func validate(input int) error {
-	if input < 0 {
-		return errors.New("input cannot be a negative number")
-	} else if input > 100 {
-		return errors.New("input cannot be over 100")
-	} else if input%7 == 0 {
-		return errors.New("input cannot be divisible by 7")
-	} else {
-		return nil
-	}
-}
+// func validate(input int) error {
+// 	if input < 0 {
+// 		return errors.New("input cannot be a negative number")
+// 	} else if input > 100 {
+// 		return errors.New("input cannot be over 100")
+// 	} else if input%7 == 0 {
+// 		return errors.New("input cannot be divisible by 7")
+// 	} else {
+// 		return nil
+// 	}
+// }
+
+// func main() {
+// 	input := 21
+
+// 	if err := validate(input); err != nil {
+// 		fmt.Println(err)
+// 	} else if input%2 == 0 {
+// 		fmt.Println(input, "is odd")
+// 	} else {
+// 		fmt.Println(input, "is even")
+// 	}
+// }
+
+// expression switch statements
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	input := 21
+	dayBorn := time.Monday
 
-	if err := validate(input); err != nil {
-		fmt.Println(err)
-	} else if input%2 == 0 {
-		fmt.Println(input, "is odd")
-	} else {
-		fmt.Println(input, "is even")
+	switch dayBorn {
+	case time.Monday:
+		fmt.Println("Monday's child is fair of face")
+	case time.Tuesday:
+		fmt.Println("Tuesday's child is full of grace")
+	// this goes on and on...
+	default:
+		fmt.Println("Error, day born is not valid")
 	}
 }
