@@ -186,6 +186,28 @@ package main
 // fizzbuzz? not doing it...
 
 // break and continue
+// import (
+// 	"fmt"
+// 	"math/rand"
+// )
+
+// func main() {
+// 	for {
+// 		r := rand.Intn(8)
+
+// 		if r%3 == 0 {
+// 			fmt.Println("skip")
+// 			continue
+// 		} else if r%2 == 0 {
+// 			fmt.Println("stop")
+// 			break
+// 		}
+// 		fmt.Println(r)
+// 	}
+// }
+
+// goto statements
+
 import (
 	"fmt"
 	"math/rand"
@@ -200,8 +222,10 @@ func main() {
 			continue
 		} else if r%2 == 0 {
 			fmt.Println("stop")
-			break
+			goto STOP
 		}
 		fmt.Println(r)
 	}
+STOP:
+	fmt.Println("goto label reached")
 }
