@@ -127,14 +127,31 @@ package main
 // }
 
 // looping over array nd slices
+// import (
+// 	"fmt"
+// )
+
+// func main() {
+// 	names := []string{"Stewie", "Megatron", "Peter", "Giggity"}
+
+// 	for i := 0; i < len(names); i++ {
+// 		fmt.Println(names[i])
+// 	}
+// }
+
+// range loops over a map
 import (
 	"fmt"
 )
 
 func main() {
-	names := []string{"Stewie", "Megatron", "Peter", "Giggity"}
+	config := map[string]string{
+		"debug":    "1",
+		"logLevel": "warn",
+		"version":  "1.2.1",
+	}
 
-	for i := 0; i < len(names); i++ {
-		fmt.Println(names[i])
+	for key, value := range config {
+		fmt.Println(key, "=", value)
 	}
 }
