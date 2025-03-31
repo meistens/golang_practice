@@ -116,12 +116,25 @@ package main
 // }
 
 // loops
+// import (
+// 	"fmt"
+// )
+
+// func main() {
+// 	for i := 0; i < 5; i++ {
+// 		fmt.Println(i)
+// 	}
+// }
+
+// looping over array nd slices
 import (
 	"fmt"
 )
 
 func main() {
-	for i := 0; i < 5; i++ {
-		fmt.Println(i)
+	names := []string{"Stewie", "Megatron", "Peter", "Giggity"}
+
+	for i := 0; i < len(names); i++ {
+		fmt.Println(names[i])
 	}
 }
