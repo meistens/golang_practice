@@ -140,18 +140,45 @@ package main
 // }
 
 // range loops over a map
+// import (
+// 	"fmt"
+// )
+
+// func main() {
+// 	config := map[string]string{
+// 		"debug":    "1",
+// 		"logLevel": "warn",
+// 		"version":  "1.2.1",
+// 	}
+
+// 	for key, value := range config {
+// 		fmt.Println(key, "=", value)
+// 	}
+// }
+
+// looping over a map
 import (
 	"fmt"
 )
 
 func main() {
-	config := map[string]string{
-		"debug":    "1",
-		"logLevel": "warn",
-		"version":  "1.2.1",
+	words := map[string]int{
+		"Gonna": 3,
+		"You":   3,
+		"Give":  2,
+		"Never": 1,
+		"Up":    4,
 	}
 
-	for key, value := range config {
-		fmt.Println(key, "=", value)
+	countKey := ""
+	keyValue := 0
+
+	for key, value := range words {
+		if value > keyValue {
+			keyValue = value
+			countKey = key
+		}
 	}
+	fmt.Println("keyValue", keyValue)
+	fmt.Println(countKey)
 }
