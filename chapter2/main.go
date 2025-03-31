@@ -101,16 +101,27 @@ package main
 // }
 
 // expressionless switch statements
+// import (
+// 	"fmt"
+// 	"time"
+// )
+
+// func main() {
+// 	switch dayBorn := time.Sunday; {
+// 	case dayBorn == time.Sunday || dayBorn == time.Saturday:
+// 		fmt.Println("born on a weekend")
+// 	default:
+// 		fmt.Println("born on some other day")
+// 	}
+// }
+
+// loops
 import (
 	"fmt"
-	"time"
 )
 
 func main() {
-	switch dayBorn := time.Sunday; {
-	case dayBorn == time.Sunday || dayBorn == time.Saturday:
-		fmt.Println("born on a weekend")
-	default:
-		fmt.Println("born on some other day")
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
 	}
 }
