@@ -157,28 +157,30 @@ package main
 // }
 
 // looping over a map
-import (
-	"fmt"
-)
+// import (
+// 	"fmt"
+// )
 
-func main() {
-	words := map[string]int{
-		"Gonna": 3,
-		"You":   3,
-		"Give":  2,
-		"Never": 1,
-		"Up":    4,
-	}
+// func main() {
+// 	words := map[string]int{
+// 		"Gonna": 3,
+// 		"You":   3,
+// 		"Give":  2,
+// 		"Never": 1,
+// 		"Up":    4,
+// 	}
 
-	countKey := ""
-	keyValue := 0
+// 	countKey := ""
+// 	keyValue := 0
 
-	for key, value := range words {
-		if value > keyValue {
-			keyValue = value
-			countKey = key
-		}
-	}
-	fmt.Println("keyValue", keyValue)
-	fmt.Println(countKey)
-}
+// 	for key, value := range words {
+// 		if value > keyValue {
+// 			keyValue = value
+// 			countKey = key
+// 		}
+// 	}
+// 	fmt.Println("keyValue", keyValue)
+// 	fmt.Println(countKey)
+// }
+
+// fizzbuzz? not doing it...
