@@ -58,7 +58,7 @@ func main() {
 	var a int8 = 125
 	var b uint8 = 254
 
-	for i := 0; i < 5; i++ {
+	for range 5 {
 		a++
 		b++
 		fmt.Println("int8: ", a, "uint8: ", b)
