@@ -47,20 +47,38 @@ package main
 // }
 
 // overflow and wraparound
-import "fmt"
 
 // func main() {
 // 	var a int8 = 127 // 128
 // 	fmt.Println(a)
 // }
 
-func main() {
-	var a int8 = 125
-	var b uint8 = 254
+// func main() {
+// 	var a int8 = 125
+// 	var b uint8 = 254
 
-	for range 5 {
-		a++
-		b++
-		fmt.Println("int8: ", a, "uint8: ", b)
-	}
+// 	for range 5 {
+// 		a++
+// 		b++
+// 		fmt.Println("int8: ", a, "uint8: ", b)
+// 	}
+// }
+
+// big numbers
+import (
+	"fmt"
+	"math"
+	"math/big"
+)
+
+func main() {
+	intA := math.MaxInt64
+	intA = intA + 1
+
+	bigA := big.NewInt(math.MaxInt64)
+	bigA.Add(bigA, big.NewInt(1))
+
+	fmt.Println("MaxIt64:	", math.MaxInt64)
+	fmt.Println("Int:	", intA)
+	fmt.Println("Big int:	", bigA.String())
 }
