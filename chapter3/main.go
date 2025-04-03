@@ -65,20 +65,31 @@ package main
 // }
 
 // big numbers
-import (
-	"fmt"
-	"math"
-	"math/big"
-)
+// import (
+// 	"fmt"
+// 	"math"
+// 	"math/big"
+// )
+
+// func main() {
+// 	intA := math.MaxInt64
+// 	intA = intA + 1
+
+// 	bigA := big.NewInt(math.MaxInt64)
+// 	bigA.Add(bigA, big.NewInt(1))
+
+// 	fmt.Println("MaxIt64:	", math.MaxInt64)
+// 	fmt.Println("Int:	", intA)
+// 	fmt.Println("Big int:	", bigA.String())
+// }
+
+// rune(s)
+import "fmt"
 
 func main() {
-	intA := math.MaxInt64
-	intA = intA + 1
+	uname := "Some_NAme_a+-eeU"
 
-	bigA := big.NewInt(math.MaxInt64)
-	bigA.Add(bigA, big.NewInt(1))
-
-	fmt.Println("MaxIt64:	", math.MaxInt64)
-	fmt.Println("Int:	", intA)
-	fmt.Println("Big int:	", bigA.String())
+	for i := range len(uname) {
+		fmt.Println(uname[i], " ")
+	}
 }
