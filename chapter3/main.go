@@ -87,7 +87,7 @@ package main
 import "fmt"
 
 func main() {
-	uname := "Some_NAme_a+-eeU"
+	uname := "Some_NAme_aeeU"
 
 	for i := range len(uname) {
 		fmt.Println(uname[i], " ")
