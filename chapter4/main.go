@@ -52,17 +52,37 @@ package main
 // }
 
 // writing to ann arr
+// import "fmt"
+
+// func msg() string {
+// 	arr := [4]string{"is", "this", "working", "???"}
+
+// 	arr[1] = "that"
+// 	arr[2] = "it..."
+
+// 	return fmt.Sprintln(arr[0], arr[1], arr[2], arr[3])
+// }
+
+// func main() {
+// 	fmt.Println(msg())
+// }
+
+// looping over an arr
 import "fmt"
 
 func msg() string {
-	arr := [4]string{"is", "this", "working", "???"}
+	m := ""
+	arr := [4]int{1, 2, 3, 4}
 
-	arr[1] = "that"
-	arr[2] = "it..."
-
-	return fmt.Sprintln(arr[0], arr[1], arr[2], arr[3])
+	for i := range arr {
+		// multiply
+		arr[i] = arr[i] * arr[i]
+		// add result to the empty variable m
+		m += fmt.Sprintf("%v: %v\n", i, arr[i])
+	}
+	return m
 }
 
 func main() {
-	fmt.Println(msg())
+	fmt.Printf(msg())
 }
