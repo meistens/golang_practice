@@ -34,17 +34,33 @@ package main
 // }
 
 // reading a single item from an array
+// import "fmt"
+
+// func msg() string {
+// 	arr := [...]string{
+// 		"ready",
+// 		"set",
+// 		"go",
+// 		"testing",
+// 		"it works",
+// 	}
+// 	return fmt.Sprintln(arr[0], arr[2], arr[1], arr[4])
+// }
+
+// func main() {
+// 	fmt.Println(msg())
+// }
+
+// writing to ann arr
 import "fmt"
 
 func msg() string {
-	arr := [...]string{
-		"ready",
-		"set",
-		"go",
-		"testing",
-		"it works",
-	}
-	return fmt.Sprintln(arr[0], arr[2], arr[1], arr[4])
+	arr := [4]string{"is", "this", "working", "???"}
+
+	arr[1] = "that"
+	arr[2] = "it..."
+
+	return fmt.Sprintln(arr[0], arr[1], arr[2], arr[3])
 }
 
 func main() {
