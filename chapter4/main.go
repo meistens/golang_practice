@@ -128,3 +128,21 @@ package main
 // 	}
 // 	fmt.Println(msg)
 // }
+
+// filling an array
+import "fmt"
+
+func fillArr(arr [10]int) [10]int {
+	// using range to create and fill an array from 1 to 10
+	for i := range arr {
+		arr[i] = i + 1
+	}
+	return arr
+}
+
+func main() {
+	// create a variable of array to hold the created array above
+	var arr [10]int
+	arr = fillArr(arr)
+	fmt.Println(arr)
+}
