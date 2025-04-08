@@ -68,21 +68,63 @@ package main
 // }
 
 // looping over an arr
-import "fmt"
+// import "fmt"
 
-func msg() string {
-	m := ""
-	arr := [4]int{1, 2, 3, 4}
+// func msg() string {
+// 	m := ""
+// 	arr := [4]int{1, 2, 3, 4}
 
-	for i := range arr {
-		// multiply
-		arr[i] = arr[i] * arr[i]
-		// add result to the empty variable m
-		m += fmt.Sprintf("%v: %v\n", i, arr[i])
-	}
-	return m
-}
+// 	for i := range arr {
+// 		// multiply
+// 		arr[i] = arr[i] * arr[i]
+// 		// add result to the empty variable m
+// 		m += fmt.Sprintf("%v: %v\n", i, arr[i])
+// 	}
+// 	return m
+// }
 
-func main() {
-	fmt.Printf(msg())
-}
+// func main() {
+// 	fmt.Printf(msg())
+// }
+
+// modifying the contents of an array in a loop
+// import "fmt"
+
+// func fillArr(arr [10]int) [10]int {
+// 	//using range where necessary
+// 	//not bothering with saving computing cost or whatever right now
+// 	//plus, shouldn't computing hardware be too powerful, unless
+// 	// there are many still using toasters as hardware...
+// 	for i := range arr {
+// 		//increment the value of the provided key(i) by 1 till array is filled to 10
+// 		arr[i] = i + 1
+// 	}
+// 	return arr
+// }
+
+// // multiply number from an array by itself and sets the result back to the array
+// func multArr(arr [10]int) [10]int {
+// 	for i := range arr {
+// 		arr[i] = arr[i] * arr[i]
+// 	}
+// 	return arr
+// }
+
+// func main() {
+// 	var arr [10]int
+// 	arr = fillArr(arr)
+// 	arr = multArr(arr)
+// 	fmt.Println(arr)
+// }
+
+// nil value
+// import "fmt"
+
+// func main() {
+// 	var msg []string
+// 	if msg == nil {
+// 		fmt.Println("error, unexpected nil value")
+// 		return
+// 	}
+// 	fmt.Println(msg)
+// }
