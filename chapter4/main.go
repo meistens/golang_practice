@@ -130,19 +130,58 @@ package main
 // }
 
 // filling an array
-import "fmt"
+// import "fmt"
 
-func fillArr(arr [10]int) [10]int {
-	// using range to create and fill an array from 1 to 10
-	for i := range arr {
-		arr[i] = i + 1
+// func fillArr(arr [10]int) [10]int {
+// 	// using range to create and fill an array from 1 to 10
+// 	for i := range arr {
+// 		arr[i] = i + 1
+// 	}
+// 	return arr
+// }
+
+// func main() {
+// 	// create a variable of array to hold the created array above
+// 	var arr [10]int
+// 	arr = fillArr(arr)
+// 	fmt.Println(arr)
+// }
+
+// slices
+import (
+	"fmt"
+	"os"
+)
+
+// return value is a str. slice
+func passedArgs(minArgs int) []string {
+	if len(os.Args) < minArgs {
+		fmt.Printf("at least %v arguments are needed\n", minArgs)
+		os.Exit(1)
 	}
-	return arr
+	var args []string
+	for i := 1; i < len(os.Args); i++ {
+		args = append(args, os.Args[i])
+	}
+	return args
+}
+
+func finlongest(args []string) string {
+	var longest string
+
+	for i := range args {
+		if len(args[i]) > len(longest) {
+			longest = args[i]
+		}
+	}
+	return longest
 }
 
 func main() {
-	// create a variable of array to hold the created array above
-	var arr [10]int
-	arr = fillArr(arr)
-	fmt.Println(arr)
+	if longest := finlongest(passedArgs(3)); len(longest) > 0 {
+		fmt.Println("longest passed:", longest)
+	} else {
+		fmt.Println("error")
+		os.Exit(0)
+	}
 }
