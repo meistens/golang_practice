@@ -148,40 +148,57 @@ package main
 // }
 
 // slices
-import (
-	"fmt"
-	"os"
-)
+// import (
+// 	"fmt"
+// 	"os"
+// )
 
-// return value is a str. slice
-func passedArgs(minArgs int) []string {
-	if len(os.Args) < minArgs {
-		fmt.Printf("at least %v arguments are needed\n", minArgs)
-		os.Exit(1)
-	}
-	var args []string
-	for i := 1; i < len(os.Args); i++ {
-		args = append(args, os.Args[i])
-	}
-	return args
-}
+// // return value is a str. slice
+// func passedArgs(minArgs int) []string {
+// 	if len(os.Args) < minArgs {
+// 		fmt.Printf("at least %v arguments are needed\n", minArgs)
+// 		os.Exit(1)
+// 	}
+// 	var args []string
+// 	for i := 1; i < len(os.Args); i++ {
+// 		args = append(args, os.Args[i])
+// 	}
+// 	return args
+// }
 
-func finlongest(args []string) string {
-	var longest string
+// func finlongest(args []string) string {
+// 	var longest string
 
-	for i := range args {
-		if len(args[i]) > len(longest) {
-			longest = args[i]
-		}
-	}
-	return longest
-}
+// 	for i := range args {
+// 		if len(args[i]) > len(longest) {
+// 			longest = args[i]
+// 		}
+// 	}
+// 	return longest
+// }
 
-func main() {
-	if longest := finlongest(passedArgs(3)); len(longest) > 0 {
-		fmt.Println("longest passed:", longest)
-	} else {
-		fmt.Println("error")
-		os.Exit(0)
-	}
-}
+// func main() {
+// 	if longest := finlongest(passedArgs(3)); len(longest) > 0 {
+// 		fmt.Println("longest passed:", longest)
+// 	} else {
+// 		fmt.Println("error")
+// 		os.Exit(0)
+// 	}
+// }
+
+// creating slices from a slice
+// import "fmt"
+
+// func msg() string {
+// 	s := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+// 	m := fmt.Sprintln(s[0], s[0:1], s[:1])
+
+// 	m += fmt.Sprintln(s[len(s)-1], s[len(s)-1:len(s)])
+
+// 	return m
+// }
+
+// func main() {
+// 	fmt.Print(msg())
+// }
