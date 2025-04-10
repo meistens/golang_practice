@@ -5,18 +5,36 @@ package main
 // but CamelCase means it can be exported
 
 // checkNum function
+// import "fmt"
+
+// func checkNum() {
+// 	for i := 1; i <= 30; i++ {
+// 		if i%2 == 0 {
+// 			fmt.Println("even")
+// 		} else {
+// 			fmt.Println("odd")
+// 		}
+// 	}
+// }
+
+// func main() {
+// 	checkNum()
+// }
+
+// more functions...
 import "fmt"
 
-func checkNum() {
-	for i := 1; i <= 30; i++ {
-		if i%2 == 0 {
-			fmt.Println("even")
-		} else {
-			fmt.Println("odd")
-		}
-	}
+func main() {
+	itemsSold()
 }
 
-func main() {
-	checkNum()
+func itemsSold() {
+	items := make(map[string]int)
+	items["mmm"] = 9
+	items["ioo"] = 8
+	items["efc"] = 3
+
+	for k, v := range items {
+		fmt.Printf("%s sold %d items\n", k, v)
+	}
 }
