@@ -17,14 +17,61 @@ package main
 // }
 
 // semantic errors
-import "fmt"
+// import "fmt"
 
-func main() {
-	km := 2
+// func main() {
+// 	km := 2
 
-	if km > 2 { // fix by adding a '='
-		fmt.Println("take the car")
-	} else {
-		fmt.Println("walk")
-	}
-}
+// 	if km > 2 { // fix by adding a '='
+// 		fmt.Println("take the car")
+// 	} else {
+// 		fmt.Println("walk")
+// 	}
+// }
+
+//
+// import (
+// 	"errors"
+// 	"fmt"
+// )
+
+// var (
+// 	ErrHrRate    = errors.New("invalid hourly rate")
+// 	ErrHrsWorked = errors.New("invalid hours worked per week")
+// )
+
+// func payDay(hrsWorked, hrRate int) (int, error) {
+// 	if hrsWorked < 0 || hrsWorked > 80 {
+// 		return 0, ErrHrsWorked
+// 	}
+
+// 	if hrRate < 10 || hrRate > 75 {
+// 		return 0, ErrHrRate
+// 	}
+
+// 	if hrsWorked > 40 {
+// 		hrsOver := hrsWorked - 40
+// 		oT := hrsOver * 2
+// 		regPay := hrsWorked * hrRate
+// 		return regPay + oT, nil
+// 	}
+// 	return hrsWorked * hrRate, nil
+// }
+
+// func main() {
+// 	pay, err := payDay(81, 50)
+// 	if err != nil {
+// 		fmt.Println(err)
+// 	}
+
+// 	pay, err = payDay(80, 5)
+// 	if err != nil {
+// 		fmt.Println(err)
+// 	}
+
+// 	pay, err = payDay(80, 50)
+// 	if err != nil {
+// 		fmt.Println(err)
+// 	}
+// 	fmt.Println(pay)
+// }
