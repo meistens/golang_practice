@@ -22,19 +22,19 @@ package main
 // }
 
 // more functions...
-import "fmt"
+// import "fmt"
 
-func main() {
-	itemsSold()
-}
+// func main() {
+// 	itemsSold()
+// }
 
-func itemsSold() {
-	items := make(map[string]int)
-	items["mmm"] = 9
-	items["ioo"] = 8
-	items["efc"] = 3
+// func itemsSold() {
+// 	items := make(map[string]int)
+// 	items["mmm"] = 9
+// 	items["ioo"] = 8
+// 	items["efc"] = 3
 
-	for k, v := range items {
-		fmt.Printf("%s sold %d items\n", k, v)
-	}
-}
+// 	for k, v := range items {
+// 		fmt.Printf("%s sold %d items\n", k, v)
+// 	}
+// }
