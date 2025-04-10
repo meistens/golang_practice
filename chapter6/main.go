@@ -75,3 +75,14 @@ package main
 // 	}
 // 	fmt.Println(pay)
 // }
+
+// panic
+import "fmt"
+
+func main() {
+	nums := []int{1, 2, 4}
+
+	for i := range 10 { // fix by setting correct range to match
+		fmt.Println(nums[i])
+	}
+}
