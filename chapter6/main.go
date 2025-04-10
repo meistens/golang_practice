@@ -77,12 +77,30 @@ package main
 // }
 
 // panic
-import "fmt"
+// import "fmt"
+
+// func main() {
+// 	nums := []int{1, 2, 4}
+
+// 	for i := range 10 { // fix by setting correct range to match
+// 		fmt.Println(nums[i])
+// 	}
+// }
+
+// basic use of panic
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
-	nums := []int{1, 2, 4}
+	msg := "bye"
+	message(msg)
+	fmt.Println("line will not be printed")
+}
 
-	for i := range 10 { // fix by setting correct range to match
-		fmt.Println(nums[i])
+func message(msg string) {
+	if msg == "bye" {
+		panic(errors.New("something went wrong"))
 	}
 }
