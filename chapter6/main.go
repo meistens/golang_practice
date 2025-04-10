@@ -22,7 +22,7 @@ import "fmt"
 func main() {
 	km := 2
 
-	if km > 2 {
+	if km > 2 { // fix by adding a '='
 		fmt.Println("take the car")
 	} else {
 		fmt.Println("walk")
