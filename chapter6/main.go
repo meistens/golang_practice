@@ -10,7 +10,7 @@ func main() {
 
 	total := 0
 
-	for i := 0; i <= 30; i++ {
+	for i := 0; i <= 30; i++ { // use range instead to avoid this mistake
 		total += nums[i]
 	}
 	fmt.Println("total: ", total)
