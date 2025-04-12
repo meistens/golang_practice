@@ -88,19 +88,19 @@ package main
 // }
 
 // basic use of panic
-import (
-	"errors"
-	"fmt"
-)
+// import (
+// 	"errors"
+// 	"fmt"
+// )
 
-func main() {
-	msg := "bye"
-	message(msg)
-	fmt.Println("line will not be printed")
-}
+// func main() {
+// 	msg := "bye"
+// 	message(msg)
+// 	fmt.Println("line will not be printed")
+// }
 
-func message(msg string) {
-	if msg == "bye" {
-		panic(errors.New("something went wrong"))
-	}
-}
+// func message(msg string) {
+// 	if msg == "bye" {
+// 		panic(errors.New("something went wrong"))
+// 	}
+// }
